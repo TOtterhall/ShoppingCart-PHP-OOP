@@ -18,43 +18,42 @@ class Product
     private $inStock;
 
     // TODO Skriv getters för alla properties
-    //SETTERS????//T.O
     
     //ID
-    public function getid() {
+    public function getId() {
         return $this-> id;
     }
 
-    public function setid($id) {
+    public function setId($id) {
         $this->id = $id;
     }
 
     //TITLE
-    public function gettitle() {
+    public function getTitle() {
         return $this-> title;
     }
 
-    public function settitle($title) {
+    public function setTitle($title) {
         $this->title = $title;
     }
 
     //PRICE
-    public function getprice() {
+    public function getPrice() {
         return $this-> price;
     }
 
-    public function setprice($price) {
+    public function setPrice($price) {
         $this->price = $price;
     }
 
     //INSTOCK
-    public function getinStock() {
+    public function getInStock() {
         return $this-> inStock;
     }
 
-    public function setinStock($inStock) {
+    public function setInStock($inStock) {
         $this->inStock = $inStock;
     }
 
-    
 }
+
