@@ -2,7 +2,7 @@
 
 class Product
 {
-    // TODO Skriv en konstruktor som sätter alla properties
+    
     public function __construct($id,$title,$price,$inStock)
     {
         $this->id = $id;
@@ -17,9 +17,9 @@ class Product
     private $price;
     private $inStock;
 
-    // TODO Skriv getters för alla properties
     
-    //ID
+    
+    
     public function getId() {
         return $this-> id;
     }
@@ -28,7 +28,7 @@ class Product
         $this->id = $id;
     }
 
-    //TITLE
+    
     public function getTitle() {
         return $this-> title;
     }
@@ -37,7 +37,7 @@ class Product
         $this->title = $title;
     }
 
-    //PRICE
+    
     public function getPrice() {
         return $this-> price;
     }
@@ -46,7 +46,7 @@ class Product
         $this->price = $price;
     }
 
-    //INSTOCK
+    
     public function getInStock() {
         return $this-> inStock;
     }
@@ -56,4 +56,3 @@ class Product
     }
 
 }
-

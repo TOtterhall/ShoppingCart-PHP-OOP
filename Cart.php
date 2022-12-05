@@ -3,8 +3,7 @@
 
 class Cart 
 {   
-       // TODO Skriv en konstruktor som sätter alla properties
-
+ 
     private array $items = [];
 
 
@@ -18,8 +17,6 @@ class Cart
     }
 
 
-
-  
 
     public function addProduct($product, $quantity) {
         $items= [$product->getId()];
@@ -37,14 +34,12 @@ class Cart
     } 
     
     
-    //Skall ta bort en produkt ur kundvagnen (använd unset())
     public function removeProduct($product)
     {   
         unset($this->items[$product->getId()]);
     }
 
-    //Skall returnera totala antalet produkter i kundvagnen
-    //OBS: Ej antalet unika produkter
+
     public function getTotalQuantity()
     {
         $sum = 0;
@@ -54,8 +49,7 @@ class Cart
         return $sum;
     }
 
-    //Skall räkna ihop totalsumman för alla produkter i kundvagnen
-    //VG: Tänk på att ett cartitem kan ha olika quantity
+
     public function getTotalSum()
     {
         $totalSum = 0;
@@ -64,7 +58,7 @@ class Cart
         }
         return $totalSum;
     }
-    
+
 }
 
 ?>
