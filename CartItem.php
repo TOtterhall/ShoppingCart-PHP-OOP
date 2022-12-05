@@ -35,17 +35,15 @@ class CartItem
     // VG: Skall utöka antalet på ett cartItem med 1. 
     // VG: Det skall inte vara möjligt att utöka så att antalet överstiger produktens $inStock.
 
-    public function increaseQuantity($number=1)
-    {
+    public function increaseQuantity()
+    { 
+        $this-> quantity +=1;
     
-        if ($this->getQuantity() + $number > $this->getProduct()->getInStock()){
-            echo "Kan inte lägga till. Slut i lager".$this->getProduct()->getInStock();
+        if ($this->getQuantity() > $this->getProduct()->getInStock()){
+            echo "<br></br><p>Kan inte lägga till. Slut i lager</p>".$this->getProduct()->getInStock();
             
 
-        } else {
-            
-            $this->quantity += $number;
-        }
+        } 
 
           
     }
@@ -55,6 +53,33 @@ class CartItem
 
    
 
+// // foreach ($cart->getItems() as $item) {
+// //     $cartItemName = $item->getProduct()->getTitle();
+// //     $cartItemQuantity = $item->getQuantity();
+
+// //     echo "<p>Titel: $cartItemName</p>";
+// //     echo "<p>Antal: $cartItemQuantity</p>";
+// //     echo "-------------------------<br><br>";
+// // }
+// VG: Skall utöka antalet på ett cartItem med 1. 
+    // VG: Det skall inte vara möjligt att utöka så att antalet överstiger produktens $inStock.
+
+
+
+    
+    
+//     if ($this->getQuantity() + $sum > $this->getProduct()->getTotalQuantity()){
+//         echo("Det är för många produkter".$this->getProduct()->getTotalQuantity());
+//    }
+//    $this->quantity += $sum;
+
+    // public function reduceQuantity($total=1){
+    //     if ($this->getQuantity() - $total < 1){
+    //        return "Minsta är 1";
+    //     }
+    //     $this->quantity -= $total;
+    // }
+//  
 
   
 ?>

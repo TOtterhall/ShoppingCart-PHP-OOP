@@ -9,37 +9,34 @@ class Cart
 
 
     public function getItems() {
-        echo $this-> items;
+        return $this-> items;
     }
 
-    public function setItems($items) {
-        echo $this ->items = $items;
-    }
-
-
-
-    public function addProduct($product, $quantity) {   
-        $cartItem = $this->findItem($product->getId());
-        if($cartItem === null){
-            $cartItem = new CartItem($product, $quantity);
-            
-            $this->items [$product->getId()] = $cartItem;
-        }     
-        
-        // ????????????ÄNDRA ! TILL =0 ovan
-        $cartItem->increaseQuantity();
-        
-        return $cartItem;
-    }
-
-
-
-    private function findItem($productId)
-    {   
-        return $this->items[$productId] ?? null;
-    }
     
+    public function setItems($items) {
+        return $this ->items = $items;
+    }
 
+
+
+  
+
+    public function addProduct($product, $quantity) {
+        $items= [$product->getId()];
+        $cartItem = $items [$product->getId()] ?? null;
+    
+        if($cartItem === null){
+            $cartItem = new CartItem($product, 0);
+            $this->items [$product->getId()] = $cartItem;
+           
+        }
+        
+        $cartItem->increaseQuantity();
+        return $cartItem;
+
+    } 
+    
+    
     //Skall ta bort en produkt ur kundvagnen (använd unset())
     public function removeProduct($product)
     {   
