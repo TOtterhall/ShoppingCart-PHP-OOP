@@ -1,9 +1,10 @@
 <?php
 
 
-class Cart
+class Cart 
 {   
-   
+       // TODO Skriv en konstruktor som sätter alla properties
+
     private array $items = [];
 
 
@@ -15,16 +16,23 @@ class Cart
         echo $this ->items = $items;
     }
 
+
+
     public function addProduct($product, $quantity) {   
         $cartItem = $this->findItem($product->getId());
         if($cartItem === null){
             $cartItem = new CartItem($product, $quantity);
+            
             $this->items [$product->getId()] = $cartItem;
         }     
         
-        $cartItem->increaseQuantity($quantity);//????????????ÄNDRA ! TILL =0 ovan
+        // ????????????ÄNDRA ! TILL =0 ovan
+        $cartItem->increaseQuantity();
+        
         return $cartItem;
     }
+
+
 
     private function findItem($productId)
     {   
